@@ -2,7 +2,7 @@
 
 ## Build an Image
 ```
-docker build -t PHP_IMAGES_NAME .
+docker build -t IMAGE_NAME .
 ```
 
 ## Build a container
