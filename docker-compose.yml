@@ -1,0 +1,16 @@
+version: "3.5"
+services: 
+    mymongo_1:
+        container_name: mymongo_1
+        image: mongo
+        ports:
+            - 27017:27017
+        command: mongod
+    
+    pythonapi1:
+        container_name: pythonapi1
+        image: pythonapi1:1.0
+        depends_on: 
+            - mymongo_1
+        ports:
+            - "5001:5001"
