@@ -14,6 +14,9 @@ docker-compose up -d
 
 ```java script
 
+//membuat database "ritel"
+use ritel 
+
 // Membuat Collection customers
 db.createCollection('customers');
 
@@ -60,5 +63,49 @@ db.orders.insertOne({
         }
     ]
 })
+
+```
+
+## Sample CRUD
+
+```
+//GET
+{
+  "database": "ritel",
+  "collection": "products"
+}
+
+//POST
+{
+  "database": "ritel",
+  "collection": "products",
+  "Document": {
+    "name": "Milo",
+    "price": 9000,
+    "category": "food"
+  }
+}
+
+//PUT
+{
+  "database": "ritel",
+  "collection": "products",
+  "Filter": {
+    "name": "Milo"
+  },
+  "DataToBeUpdated": {
+    "price": "9900",
+    "category": "beverage"
+  }
+}
+
+//DELETE
+{
+    "database": "ritel",
+    "collection": "products",
+    "Filter": {
+        "name": "U-Mild"
+        }
+}
 
 ```
